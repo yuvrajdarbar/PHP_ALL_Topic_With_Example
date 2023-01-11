@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>PHP All Topics</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="logo.png" alt="logo"></span>
+        <div class="content center">
+            This PHP Cheatsheet is For Reference.
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><b>PHP Syntax</b>
+                <pre class="language-php">
+                    <code>
+                    &lt?php
+                    echo "Hello Yuvraj!";
+                    ?&gt </code></pre>
+            </li>
+            <li>PHP Case Sensitivity 1
+                <pre class="language-php">
+                <code>
+                    &lt?php
+                    ECHO "Hello World!&ltbr&gt";
+                    echo "Hello World!&ltbr&gt";
+                    EcHo "Hello World!&ltbr&gt";
+                    ?&gt </code></pre>
+            </li>
+            <li><b>PHP Case Sensitivity 2</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $color = "red";
+                        echo "My car is " . $color . "&ltbr&gt";
+                        echo "My house is " . $COLOR . "&ltbr&gt";
+                        echo "My boat is " . $coLOR . "&ltbr&gt";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP single-line comments</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        // This is a single-line comment
+                        # This is also a single-line comment
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP multiple-lines comment</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        /*
+                        This is a multiple-lines comment block
+                        that spans over multiple
+                        lines
+                        */
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Variables</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $txt = "Yuvraj";
+                        echo "Hello " . $txt . "!";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Sum of two variables</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 5;
+                        $y = 4;
+                        echo $x + $y;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Global Keyword</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 5;
+                        $y = 10;
+                        function myTest() {
+                          global $x, $y;
+                          $y = $x + $y;
+                        }
+                        myTest();
+                        echo $y; // outputs 15
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Static Keyword</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        function myTest() {
+                          static $x = 0;
+                          echo $x;
+                          $x++;
+                        }
+                        myTest();
+                        myTest();
+                        myTest();  // outputs 012
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Echo and print Statements</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo "&lth2&gtPHP is Fun!&lt/h2&gt";
+                        echo "Hello world!&ltbr&gt";
+                        echo "I'm about to learn PHP!&ltbr&gt";
+                        echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+                        ?&gt
+
+                        &lt?php
+                        print "&lth2&gtPHP is Fun!&lt/h2&gt";
+                        print "Hello world!&ltbr&gt";
+                        print "I'm about to learn PHP!";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>String data type</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = "Hello world!";
+                        echo $x;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Integer data type</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 5985;
+                        var_dump($x);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Array data type</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cars = array("Volvo","BMW","Toyota");
+                        var_dump($cars);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Object data type</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        class Car {
+                         public $color;
+                         public $model;
+                        public function __construct($color, $model) {
+                         $this-&gtcolor = $color;
+                         $this-&gtmodel = $model;
+                        }
+                        public function message() {
+                        return "My car is a " . $this-&gtcolor . " " . $this-&gtmodel . "!";
+                        }
+                        }
+
+                        $myCar = new Car("black", "Volvo");
+                        echo $myCar -&gt message();
+                        echo "&ltbr&gt";
+                        $myCar = new Car("red", "Toyota");
+                        echo $myCar -&gt message();
+                        ?&gt</code></pre>
+            </li>
+            <li><b>NULL data type</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = null;
+                        var_dump($x);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>strlen() - Return the Length of a String</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo strlen("Hello world!"); // outputs 12
+                        ?&gt</code></pre>
+            </li>
+            <li><b>str_word_count() - Count Words in a String</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo str_word_count("Hello world!"); // outputs 2
+                        ?&gt</code></pre>
+            </li>
+            <li><b>strrev() - Reverse a String</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo strrev("Hello world!"); // outputs !dlrow olleH
+                        ?&gt</code></pre>
+            </li>
+            <li><b>strpos() - Search For a Text Within a String</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo strpos("Hello world!", "world"); // outputs 6
+                        ?&gt</code></pre>
+            </li>
+            <li><b>str_replace() - Replace Text Within a String</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo str_replace("world", "Dolly", "Hello world!"); // outputs Hello Dolly!
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Math pi() Function</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo(pi()); // returns 3.1415926535898
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Math min() and max() Functions</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo(min(0, 150, 30, 20, -8, -200));  // returns -200
+                        echo(max(0, 150, 30, 20, -8, -200));  // returns 150
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Math abs() Function</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo(abs(-6.7));  // returns 6.7
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Math sqrt() Function</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo(sqrt(64));  // returns 8
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Math round() Function</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo(round(0.60));  // returns 1
+                        echo(round(0.49));  // returns 0
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Random Numbers</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo(rand());
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Arithmetic Operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;  
+                        $y = 6;
+                        echo  $x + $y . "&ltbr&gt";
+                        echo  $x - $y . "&ltbr&gt";
+                        echo  $x * $y . "&ltbr&gt";
+                        echo  $x / $y . "&ltbr&gt";
+                        echo  $x % $y . "&ltbr&gt";
+                        ?&gt </code></pre>
+            </li>
+            <li><b>Assignment Operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;  
+                        echo $x;
+                        ?&gt </code></pre>
+            </li>
+            <li><b>Comparison Operators (==)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 100;  
+                        $y = "100";
+                        var_dump($x == $y); // returns true because values are equal
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Comparison Operators(===)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 100;  
+                        $y = "100";
+                        var_dump($x === $y); // returns false because types are not equal
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Comparison Operators Greater than(>)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 100;
+                        $y = 50;
+                        var_dump($x &gt $y); // returns true because $x is greater than $y
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Comparison Operators Less than(<)< /b>
+                        <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;
+                        $y = 50;
+                        var_dump($x &lt $y); // returns true because $x is less than $y
+                        ?&gt </code></pre>
+            </li>
+            <li><b>Pre-increment Operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;  
+                        echo ++$x;
+                        ?&gt </code></pre>
+            </li>
+            <li><b>Post-increment Operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;  
+                        echo $x++;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Pre-decrement Operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;  
+                        echo --$x;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Post-decrement Operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 10;  
+                        echo $x--;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Logical Operators (and)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 100;  
+                        $y = 50;
+                        if ($x == 100 and $y == 50) {
+                        echo "Hello world!";
+                        }
+                        ?&gt </code></pre>
+            </li>
+            <li><b>Logical Operators (or)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 100;  
+                        $y = 50;
+                        if ($x == 100 or $y == 80) {
+                        echo "Hello world!";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Logical Operators (Not)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 100;  
+                        if ($x !== 90) {
+                        echo "Hello world!";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Concatenation operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $txt1 = "Hello";
+                        $txt2 = " world!";
+                        echo $txt1 . $txt2;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Ternary operators</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $user = "John Doe";
+                        // if empty($user) = FALSE, set $status = "logged in"
+                        echo $status = (empty($user)) ? "anonymous" : "logged in";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>The if Statement</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $num = 17;
+                        if($num &gt= 18){
+                        echo "Yes, You are able to make driving licence"; //No output
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>The if...else Statement</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $num = 17;
+                        if($num &gt= 18){
+                        echo "Yes, You are able to make driving licence";
+                        }else{
+                        echo "No, You are not ablel to make driving licence";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>The if...elseif...else Statement</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $t = date("H");
+                        if ($t &lt "10") {
+                        echo "Have a good morning!";
+                        } elseif ($t &lt "20") {
+                        echo "Have a good day!";
+                        } else {
+                        echo "Have a good night!";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Switch Statement</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $favcolor = "red";
+                        switch ($favcolor) {
+                        case "red":
+                        echo "Your favorite color is red!";
+                        break;
+                        case "blue":
+                        echo "Your favorite color is blue!";
+                        break;
+                        case "green":
+                        echo "Your favorite color is green!";
+                        break;
+                        default:
+                        echo "Your favorite color is neither red, blue, nor green!";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>While Loop</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 1;
+                        while($x &lt= 5) {
+                        echo "The number is: $x &ltbr&gt";
+                        $x++;
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>do...while Loop</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $x = 1;
+                        do {
+                        echo "The number is: $x &ltbr&gt";
+                        $x++;
+                        } while ($x &lt= 5);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>For Loop</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        for ($x = 0; $x &lt= 10; $x++) {
+                        echo "The number is: $x &ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Foreach Loop</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $colors = array("red", "green", "blue", "yellow");
+                        foreach ($colors as $value) {
+                        echo "$value &ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Foreach Loop (keys and the values of the given array)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        foreach($age as $key =&gt $val) {
+                        echo "$key = $val&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Break statement</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        for ($x = 0; $x &lt 10; $x++) {
+                        if ($x == 4) {
+                        break;
+                        }
+                        echo "The number is: $x &ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Continue statement</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        for ($x = 0; $x &lt 10; $x++) {
+                        if ($x == 4) {
+                        continue;
+                        }
+                        echo "The number is: $x &ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>User defined function in PHP</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        function writeMsg() {
+                        echo "Hello world!";
+                        }
+                        writeMsg(); // call the function
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Arguments function in PHP</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        function familyName($fname) {
+                        echo "$fname Parmar.&ltbr&gt";
+                        }
+
+                        familyName("Jani");
+                        familyName("Hege");
+                        familyName("Stale");
+                        familyName("Kai Jim");
+                        familyName("Borge");
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP is a Loosely Typed Language</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        function addNumbers(int $a, int $b) {
+                        return $a + $b;
+                        }
+                        echo addNumbers(5, "5 days");
+                        // since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Default Argument Value</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php declare(strict_types=1); // strict requirement
+                        function setHeight(int $minheight = 50) {
+                          echo "The height is : $minheight &ltbr&gt";
+                        }
+                        setHeight(350);
+                        setHeight(); // will use the default value of 50
+                        setHeight(135);
+                        setHeight(80);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Functions - Returning values</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php declare(strict_types=1); // strict requirement
+                        function sum(int $x, int $y) {
+                        $z = $x + $y;
+                        return $z;
+                        }
+                        echo "5 + 10 = " . sum(5, 10) . "&ltbr&gt";
+                        echo "7 + 13 = " . sum(7, 13) . "&ltbr&gt";
+                        echo "2 + 4 = " . sum(2, 4);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Indexed arrays 1</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cars = array("Volvo", "BMW", "Toyota");
+                        echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Indexed arrays 2</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cars = array("Volvo", "BMW", "Toyota");
+                        $arrlength = count($cars);
+                        for($x = 0; $x &lt $arrlength; $x++) {
+                        echo $cars[$x];
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Associative arrays 1</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        echo "Peter is " . $age['Peter'] . " years old.";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Associative arrays 2</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        foreach($age as $x =&gt $x_value) {
+                        echo "Key=" . $x . ", Value=" . $x_value;
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Multidimensional arrays</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cars = array (
+                        array("Volvo",22,18),
+                        array("BMW",15,13),
+                        array("Saab",5,2),
+                        array("Land Rover",17,15)
+                        );
+  
+                        echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".&ltbr&gt";
+                        echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".&ltbr&gt";
+                        echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".&ltbr&gt";
+                        echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".&ltbr&gt";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>sort() - sort arrays in ascending order</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cars = array("Volvo", "BMW", "Toyota");
+                        sort($cars);
+                        $clength = count($cars);
+                        for($x = 0; $x &lt $clength; $x++) {
+                        echo $cars[$x];
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>rsort() - sort arrays in descending order</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cars = array("Volvo", "BMW", "Toyota");
+                        rsort($cars);
+                        $clength = count($cars);
+                        for($x = 0; $x &lt $clength; $x++) {
+                        echo $cars[$x];
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>asort() - sort associative arrays in ascending order, according to the value</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        asort($age);
+                        foreach($age as $x =&gt $x_value) {
+                        echo "Key=" . $x . ", Value=" . $x_value;
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>ksort() - sort associative arrays in ascending order, according to the key</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        ksort($age);
+                        foreach($age as $x =&gt $x_value) {
+                        echo "Key=" . $x . ", Value=" . $x_value;
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>arsort() - sort associative arrays in descending order, according to the value</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        arsort($age);
+                        foreach($age as $x =&gt $x_value) {
+                        echo "Key=" . $x . ", Value=" . $x_value;
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>krsort() - sort associative arrays in descending order, according to the key</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $age = array("Peter"=&gt"35", "Ben"=&gt"37", "Joe"=&gt"43");
+                        krsort($age);
+                        foreach($age as $x =&gt $x_value) {
+                        echo "Key=" . $x . ", Value=" . $x_value;
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>$GLOBALS (is a PHP super global variabl)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php 
+                        $x = 75;
+                        $y = 25; 
+                        function addition() {
+                        $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+                        }
+                        addition();
+                        echo $z;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>$_SERVER (is a PHP super global variable)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo $_SERVER['PHP_SELF'];
+                        echo "&ltbr&gt";
+                        echo $_SERVER['SERVER_NAME'];
+                        echo "&ltbr&gt";
+                        echo $_SERVER['HTTP_HOST'];
+                        echo "&ltbr&gt";
+                        echo $_SERVER['HTTP_USER_AGENT'];
+                        echo "&ltbr&gt";
+                        echo $_SERVER['SCRIPT_NAME'];
+                        ?&gt</code></pre>
+            </li>
+            <li><b>$_REQUEST (is a PHP super global variable)</b>
+                <pre class="language-php">
+                    <code>
+                        &ltform method="post" action="&lt?php echo $_SERVER['PHP_SELF'];?&gt"&gt
+                        Name: &ltinput type="text" name="fname"&gt
+                        &ltinput type="submit"&gt
+                        &lt/form&gt
+
+                        &lt?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        // collect value of input field
+                        $name = htmlspecialchars($_REQUEST['fname']);
+                        if (empty($name)) {
+                        echo "Name is empty";
+                        } else {
+                        echo $name;
+                        }
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>$_POST (is a PHP super global variable)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        if(isset($_POST['submit'])){
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        echo "Your name is " . $name . "&ltbr&gt";
+                        echo "Your email is " . $email;
+                        }
+                        ?&gt
+                        &lt!DOCTYPE html&gt
+                        &lthtml lang="en"&gt
+                        &lthead&gt
+                        &ltmeta charset="UTF-8"&gt
+                        &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+                        &ltmeta http-equiv="X-UA-Compatible" content="ie=edge"&gt
+                        &lttitle&gtGET Method&lt/title&gt
+                        &lt/head&gt
+                        &ltbody&gt
+                        &ltfieldset&gt
+                        &ltlegend&gtAdd your information&lt/legend&gt
+                        &ltform action="#" method="POST"&gt
+                        &ltlabel&gtName:&lt/label&gt
+                        &ltinput type="text" name="name" placeholder="Enter your name"&gt&ltbr&gt  
+                        &ltlabel&gtEmail:&lt/label&gt
+                        &ltinput type="Email" name="email" placeholder="Enter your email"&gt&ltbr&gt
+                        &ltinput type="submit" name="submit"&gt
+                        &lt/form&gt 
+                        &lt/fieldset&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>$_GET (is a PHP super global variable)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        if(isset($_GET['submit'])){
+                        $name = $_GET['name'];
+                        $email = $_GET['email'];
+                        echo "Your name is " . $name . "&ltbr&gt";
+                        echo "Your email is " . $email;
+                        }
+                        ?&gt
+                        &lt!DOCTYPE html&gt
+                        &lthtml lang="en"&gt
+                        &lthead&gt
+                        &ltmeta charset="UTF-8"&gt
+                        &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+                        &ltmeta http-equiv="X-UA-Compatible" content="ie=edge"&gt
+                        &lttitle&gtGET Method&lt/title&gt
+                        &lt/head&gt
+                        &ltbody&gt
+                        &ltfieldset&gt
+                        &ltlegend&gtAdd your information&lt/legend&gt
+                        &ltform action="#" method="GET"&gt
+                        &ltlabel&gtName:&lt/label&gt
+                        &ltinput type="text" name="name" placeholder="Enter your name"&gt&ltbr&gt  
+                        &ltlabel&gtEmail:&lt/label&gt
+                        &ltinput type="Email" name="email" placeholder="Enter your email"&gt&ltbr&gt
+                        &ltinput type="submit" name="submit"&gt
+                        &lt/form&gt 
+                        &lt/fieldset&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>A Simple HTML Form</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        if(isset($_GET["submit"])){
+                        echo "Your name is - " .$_GET["name"] ."&ltbr&gt"; 
+                        echo "Your Email is - " .$_GET["email"];
+                        }
+                        ?&gt
+
+                        &lt!DOCTYPE HTML&gt
+                        &lthtml&gt  
+                        &ltbody&gt
+                        &ltform action="#" method="GET"&gt
+                        Name: &ltinput type="text" name="name"&gt&ltbr&gt
+                        E-mail: &ltinput type="text" name="email"&gt&ltbr&gt
+                        &ltinput type="submit" name="submit"&gt
+                        &lt/form&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>PHP Form Validation Example</b>
+                <pre class="language-php">
+                    <code>
+                        
+                        &lt!DOCTYPE HTML&gt  
+                        &lthtml&gt
+                        &lthead&gt
+                        &ltstyle&gt
+                        .error {color: #FF0000;}
+                        &lt/style&gt
+                        &lt/head&gt
+                        &ltbody&gt  
+
+                        &lt?php
+                        // define variables and set to empty values
+                        $nameErr = $emailErr = $genderErr = $websiteErr = "";
+                        $name = $email = $gender = $comment = $website = "";
+
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        if (empty($_POST["name"])) {
+                             $nameErr = "Name is required";
+                        } else {
+                            $name = test_input($_POST["name"]);
+                        }
+  
+                        if (empty($_POST["email"])) {
+                            $emailErr = "Email is required";
+                        } else {
+                            $email = test_input($_POST["email"]);
+                        }
+    
+                            if (empty($_POST["website"])) {
+                            $website = "";
+                        } else {
+                            $website = test_input($_POST["website"]);
+                        }
+
+                            if (empty($_POST["comment"])) {
+                            $comment = "";
+                        } else {
+                            $comment = test_input($_POST["comment"]);
+                        }
+
+                            if (empty($_POST["gender"])) {
+                            $genderErr = "Gender is required";
+                        } else {
+                            $gender = test_input($_POST["gender"]);
+                        }
+                        }
+
+                        function test_input($data) {
+                        $data = trim($data);
+                        $data = stripslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                        }
+                        ?&gt
+
+                        &lth2&gtPHP Form Validation Example&lt/h2&gt
+                        &ltp&gt&ltspan class="error"&gt* required field&lt/span&gt&lt/p&gt
+                        &ltform method="post" action="&lt?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt"&gt  
+                        Name: &ltinput type="text" name="name"&gt
+                        &ltspan class="error"&gt* &lt?php echo $nameErr;?&gt&lt/span&gt
+                        &ltbr&gt&ltbr&gt
+                        E-mail: &ltinput type="text" name="email"&gt
+                        &ltspan class="error"&gt* &lt?php echo $emailErr;?&gt&lt/span&gt
+                        &ltbr&gt&ltbr&gt
+                        Website: &ltinput type="text" name="website"&gt
+                        &ltspan class="error"&gt&lt?php echo $websiteErr;?&gt&lt/span&gt
+                        &ltbr&gt&ltbr&gt
+                        Comment: &lttextarea name="comment" rows="5" cols="40"&gt&lt/textarea&gt
+                        &ltbr&gt&ltbr&gt
+                        Gender:
+                        &ltinput type="radio" name="gender" value="female"&gtFemale
+                        &ltinput type="radio" name="gender" value="male"&gtMale
+                        &ltinput type="radio" name="gender" value="other"&gtOther
+                        &ltspan class="error"&gt* &lt?php echo $genderErr;?&gt&lt/span&gt
+                        &ltbr&gt&ltbr&gt
+                        &ltinput type="submit" name="submit" value="Submit"&gt  
+                        &lt/form&gt
+
+                        &lt?php
+                        echo "&lth2&gtYour Input:&lt/h2&gt";
+                        echo $name;
+                        echo "&ltbr&gt";
+                        echo $email;
+                        echo "&ltbr&gt";
+                        echo $website;
+                        echo "&ltbr&gt";
+                        echo $comment;
+                        echo "&ltbr&gt";
+                        echo $gender;
+                        ?&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>PHP Date and Time</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo "Today is " . date("Y/m/d") . "&ltbr&gt";
+                        echo "Today is " . date("Y.m.d") . "&ltbr&gt";
+                        echo "Today is " . date("Y-m-d") . "&ltbr&gt";
+                        echo "Today is " . date("l");
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Automatic Copyright Year</b>
+                <pre class="language-php">
+                    <code>
+                        &lt!DOCTYPE html&gt
+                        &lthtml&gt
+                        &ltbody&gt
+
+                        © 2010-&lt?php echo date("Y");?&gt
+
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>Include Files</b>
+                <pre class="language-php">
+                    <code>
+                        &lt!DOCTYPE html&gt
+                        &lthtml&gt
+                        &ltbody&gt
+                        &ltdiv class="menu"&gt
+                        &lt?php include 'menu.php';?&gt
+                        &lt/div&gt
+                        &lth1&gtWelcome to my home page!&lt/h1&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>Require Files</b>
+                <pre class="language-php">
+                    <code>
+                        &lt!DOCTYPE html&gt
+                        &lthtml&gt
+                        &ltbody&gt
+
+                        &lth1&gtWelcome to my home page!&lt/h1&gt
+                        &lt?php require 'noFileExists.php';
+                        echo "I have a $color $car.";
+                        ?&gt
+
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>PHP readfile() Function</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo readfile("webdictionary.txt");
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Read Single Line - fgets()</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+                        echo fgets($myfile);
+                        fclose($myfile);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Read Single Line - fgets()</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+                        echo fgets($myfile);
+                        fclose($myfile);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Cookies</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $cookie_name = "user";
+                        $cookie_value ="Yuvraj parmar";
+                        setcookie($cookie_name,$cookie_value,time()+(3600),"/");
+                        if(isset($COOKIE[$cookie_name])){
+                        echo "cookie is not set";
+                        }
+                        else {
+                        echo $_COOKIE[$cookie_name];
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP isset</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $a = NULL;
+                        if(isset($a)){
+                        echo "The value is " . $a;
+                        }
+                        else {
+                        echo "There is no value";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP explode</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $message = "Save our country";
+                        //$array = explode(" ", $message, 1);
+                        $array = explode(" ", $message,);
+                        echo "&ltpre&gt";
+                        print_r($array);
+                        echo "&ltpre&gt";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>php  implode</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $array = array("yuvraj","parmar");
+                        $convert = implode(" ", $array);
+                        echo $convert;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>php $_FILES and move_uploaded_file($tmp_name, destination)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        if(isset($_FILES['image'])){
+                        echo "&ltpre&gt";
+                        print_r($_FILES);
+                        echo "&lt/pre&gt";
+
+                        $file_name = $FILES['image']['name'];
+                        $file_size = $FILES['image']['size'];
+                        $file_tmp = $FILES['image']['tmp_name'];
+                        $file_type = $FILES['image']['type'];
+
+                        move_uploaded_file($file_tmp,"upload/".$file_name);
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP die()</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        echo "Hello World ! &ltbr&gt";
+                        echo "Hello World ! &ltbr&gt";
+                        echo "Hello World ! &ltbr&gt";
+                        die();
+                        echo "Hello World ! &ltbr&gt";
+                        echo "Hello World ! &ltbr&gt";
+                        echo "Hello World ! &ltbr&gt";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>PHP Class and object in OOP. </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        class cars{
+                        public $name;
+                        public $color;
+
+                        public function get_name($name,$color){
+                        echo "Car name is: " . $this-&gtname = $name . '&ltbr&gt';
+                        echo "Car Color is: " .$this-&gtcolor = $color . '&ltbr&gt&ltbr&gt';
+                        }
+                        }
+                        $bmw = new cars();
+                        $odi = new cars();
+                        $bmw-&gtget_name("BMW","red");
+                        $odi-&gtget_name("ODI","white");
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Constructor function in OOP </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        class cars{
+                        public $name;
+                        public $color;
+
+                        public function __construct($name,$color){
+                        echo "Car name is: " . $this-&gtname = $name . "&ltbr&gt";
+                        echo "Car color is: " . $this-&gtname = $color . "&ltbr&gt";
+                        }
+                        }
+                        $BMW = new cars("BMW","black");
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Destructor function in OOP </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        class cars{
+                        public $name;
+                        public function __construct($name){
+                        return $this-&gtname = $name;
+                        } 
+                        public function __destruct(){
+                        echo "The car name is: " . $this-&gtname . '&ltbr&gt';
+                            }
+                        }
+                        $BMW = new cars("BMW");
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Inheritance  in OOP </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        class class1{
+                        function __construct(){
+                        echo "This is class 1 Construct &ltbr&gt";
+                        }
+                        function fun1(){
+                        echo "This is class 1 Function &ltbr&gt";
+                        }
+                        }
+                        class class2 extends class1{
+                        function __construct(){
+                        parent::__construct();
+                        echo "This is class 2 Construct &ltbr&gt";
+                        }
+                        function fun2(){
+                        parent::fun1();
+                        echo "This is class 2 Function &ltbr&gt";
+                        }
+                        }
+                        $obj =new class2();
+                        $obj-&gtfun2();
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Encapsulation  in OOP </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        class class1{
+                        //public $num; // By defualt variable is public
+                        protected $num;
+                        function __construct(){
+                        $this-&gtnum=1;
+                        }
+                        }
+                        class class2 extends class1{
+                        function getNum(){
+                        return $this-&gtnum;
+                        }
+                        }
+                        //$obj = new class1();
+                        //$obj-&gtnum=2; //if variable is protected then we can not access that value out of the calss.
+                        //echo $obj-&gtnum;
+                        //echo $obj-&gtgetNum();
+
+                        $obj=new class2();
+                        echo $obj-&gtgetNum();
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Abstraction  in OOP </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        abstract class class1{
+                        abstract function test(); 
+                        }
+                        class class2 extends class1{
+                        function test(){
+                        echo "This is class 2 test method ";
+                        }
+                        }
+                        $obj=new class2();
+                        $obj-&gttest();
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Interface  in OOP </b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        interface class1{
+                        public function test1();
+                        }
+                        interface class2{
+                        public function test2();
+                        }
+                        class class3 implements class1, class2{
+                        public function test1(){
+                        echo "This is class 3 test 1 function &ltbr&gt";
+                        }
+                        public function test2(){
+                        echo "This is class 3 test 2 function";  
+                        }
+                        }
+                        $obj=new class3();
+                        $obj-&gttest1();
+                        $obj-&gttest2();
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Array and way to print the array value</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $Fruits = array("Apple","Orange","Banana","Mango","Cherry");
+                        echo var_dump($Fruits) . "&ltbr&gt&ltbr&gt";
+
+                        echo var_dump($Fruits[1]) . "&ltbr&gt&ltbr&gt";
+
+                        echo $Fruits[1] . "&ltbr&gt&ltbr&gt";
+
+                        echo count($Fruits) . "&ltbr&gt&ltbr&gt";
+
+                        foreach($Fruits as $value){
+                           echo $value ."&ltbr&gt&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Associative Array and way to print.</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $NameMark = array('Yuvraj' =&gt 10, 'Raj' =&gt 20, 'Kiran' =&gt 30);
+                        $no = 1;
+                        foreach ($NameMark as $key =&gt $value) {
+                            echo $no . " Student Name is " . $key . " and marks is " . $value . "&ltbr&gt";
+                            $no++;
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Check the variable value is thete or NULL</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $a = Null;
+                        if(isset($a)){
+                        echo "Variable having value is . '$a'";
+                        }else{
+                            echo "This is null variable";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of ElseIf (Value divisible by 2 & 3 or not.)</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $var = 15;
+                        if($var % 2 == 0 && $var % 3 ==0){
+                            echo "Divisible by both";
+                        }
+                        elseif($var % 2 == 0){
+                           echo "Divisible by 2";
+                        }
+                        elseif($var % 3 == 0)
+                        {
+                           echo "Divisible by 3";
+                        }
+                        else{
+                          echo "Not divisible by either 2 or 3";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Even or Odd number using If Else</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $num = 11;
+                        if($num % 2 == 0){
+                        echo "This number is Even";
+                        }
+                        else{
+                            echo "This number is Odd";
+                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of GET Method</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        if (isset($_GET["name"]) || isset($_GET["age"])) {
+                            echo "Hi " . $_GET['name'] . "&ltbr&gt";
+                            echo "Your age is " . $_GET['age'] . " years";
+                            exit();
+                        }
+                        ?&gt
+                        &lthtml&gt
+
+                        &ltbody&gt
+                            &ltform action="&lt?php $_php_self ?&gt" method="GET"&gt
+                                Name: &ltinput type="text" name="name" /&gt
+                                Age: &ltinput type="text" name="age" /&gt
+                                &ltinput type="submit" /&gt
+                            &lt/form&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>Example of POST Method</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        if(isset($_POST["name"]) || isset($_POST["age"])) {
+                            echo "Hi " . $_POST['name'] . "&ltbr&gt";
+                            echo "Your age is " . $_POST['age'] . " years";
+                            exit();
+                        }
+                        ?&gt
+                        &lthtml&gt
+
+                        &ltbody&gt
+                           &ltform action="&lt?php $_php_self ?&gt" method="POST"&gt
+                               Name: &ltinput type="text" name="name" /&gt
+                               Age: &ltinput type="text" name="age" /&gt
+                               &ltinput type="submit" /&gt
+                            &lt/form&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>Example of Multidimensional Array</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $multidim = array(array(2,5,7,8),
+                                          array(2,5,7,8),
+                                          array(4,5,0,1));
+
+                                          for($i = 0; $i &lt count($multidim); $i++){   
+                                          for($j = 0; $j &lt= count($multidim); $j++){  
+                                          echo $multidim[$i][$j];
+                                          echo " ";
+                                            }
+                                            echo "&ltbr&gt";
+                                        }
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Overloading</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        Class BaseClass{
+                            function printData($val1,$val2){
+                                $add = $val1 + $val2;
+                                echo "Sum of given no of BaseClass = " . $add . "&ltbr&gt";
+                           }
+                        }
+                        class child extends BaseClass{
+                            function printData($val1,$val2){
+                                $mul = $val1 * $val2;
+                                echo "Multiplication of given no of ChildClass= " . $mul;
+                           }
+                        }
+                        $obj = new BaseClass();
+                        $obj -&gt printData(10,10);
+                        $obj = new child();
+                        $obj -&gtprintData(20,20);
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Password_Hash</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $password_string = "password@123";
+                        $hash = password_hash($password_string,PASSWORD_DEFAULT);
+                        echo "Generated hash: " . $hash;
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Polymorphism</b>
+                <pre class="language-php">
+                    <code>
+                        &lthtml&gt
+
+                        &ltbody&gt
+                            &lt?php
+                            class Fruit
+                            {
+                                public $name;
+                                public $color;
+                            
+                                function __construct($name, $color)
+                                {
+                                    $this-&gtname = $name;
+                                    $this-&gtcolor = $color;
+                                }
+                            
+                               public function intro()
+                                {
+                                    echo "A {$this-&gtname} is a fruit and the color of the fruit is {$this-&gtcolor}.";
+                               }
+                            }
+                           class cherry extends Fruit
+                            {
+                                public $weight;
+                                public function __construct($name, $color, $weight)
+                                {
+                                    $this-&gtname = $name;
+                                    $this-&gtcolor = $color;
+                                    $this-&gtweight = $weight;
+                                }
+                                public function intro()
+                                {
+                                    echo "This fruit is {$this-&gtname}, this color is {$this-&gtcolor}, and the weight is {$this-&gtweight} gram.";
+                                }
+                            }
+                            $cherry = new cherry("cherry", "bright pink", 20);
+                            $cherry-&gtintro();
+                        
+                            ?&gt
+                        &lt/body&gt
+                        &lt/html&gt</code></pre>
+            </li>
+            <li><b>Example of Sum Of Digits</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $num = 14597;
+                        $sum = 0;
+                        $rem = 0;
+                        for ($i = 0; $i &lt= strlen($num); $i++) {
+                            $rem = $num % 10;
+                            $sum = $sum + $rem;
+                            $num = $num / 10;
+                        }
+                        echo "Sum of digits 14597 is $sum";
+                        ?&gt</code></pre>
+            </li>
+            <li><b>Example of Table of Number</b>
+                <pre class="language-php">
+                    <code>
+                        &lt?php
+                        $num = 5;
+                        for($i = 1; $i &lt= 10; $i++)
+                        {
+                        echo  $num ." * " . $i ." = " . $i * $num;
+                        echo "&ltbr&gt";
+                        }
+                        ?&gt</code></pre>
+            </li>
+
+        </ol>
+    </div>
+
+</body>
+
+</html>
